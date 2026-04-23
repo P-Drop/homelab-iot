@@ -1,0 +1,17 @@
+# Secretos
+.env
+*.env
+secrets/
+
+# Home Assistant - datos personales y tokens
+homeassistant/config/secrets.yaml
+homeassistant/config/.storage/
+homeassistant/config/home-assistant_v2.db
+
+# Logs
+mosquitto/log/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
