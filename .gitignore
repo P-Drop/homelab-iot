@@ -3,14 +3,22 @@
 *.env
 secrets/
 
+# Secretos MQTT
+mosquitto/config/passwd
+
 # Home Assistant - datos personales y tokens
 homeassistant/config/secrets.yaml
 homeassistant/config/.storage/
 homeassistant/config/home-assistant_v2.db
+homeassistant/config/home-assistant_v2.db-shm
+homeassistant/config/home-assistant_v2.db-wal
 
 # Logs
 mosquitto/log/
 *.log
+
+# Datos persistentes
+mosquitto/data/
 
 # OS
 .DS_Store
