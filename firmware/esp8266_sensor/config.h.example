@@ -16,4 +16,10 @@ const char*	MQTT_CLIENT_ID	= "esp8266_sensor_01";
 const char* TOPIC_TEMPERATURA 	= "homelab/sensor/temperatura";
 const char* TOPIC_STATUS	= "homelab/sensor/status";
 
+// CALIBRACIÓN TMP36GZ - v1.0
+// Valor calibración ajustado empíricamente 0.454
+// (ADC ESP8266 no lineal, referencia interna imprecisa)
+// TODO v1.1: reemplazar por DHT22 o ADS1115 (ADC externo)
+const float VALOR_CALIBRACION = 0.454;
+
 #endif 
