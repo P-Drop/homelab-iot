@@ -1,0 +1,19 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// WiFi
+const char* WIFI_SSID		= "TU_RED_WIFI";
+const char* WIFI_PASSWORD 	= "TU_PASSWORD_WIFI";
+
+// MQTT
+const char* 	MQTT_SERVER	= "IP_DEL_SERVIDOR"
+const int 	MQTT_PORT	= 1883;
+const char*	MQTT_USER	= "TU_USUARIO_MQTT";
+const char*	MQTT_PASSWORD	= "TU_PASSWORD_MQTT";
+const char*	MQTT_CLIENT_ID	= "esp8266_sensor_01";
+
+// Tópicos
+const char* TOPIC_TEMPERATURA 	= "homelab/sensor/temperatura";
+const char* TOPIC_STATUS	= "homelab/sensor/status";
+
+#endif 
