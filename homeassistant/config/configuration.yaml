@@ -1,0 +1,48 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# -- MQTT Sensors ------------------------
+
+mqtt:
+  sensor:
+    - name: "Temperatura Salón"
+      unique_id: "esp8266_sensor_01_temperatura"
+      state_topic: "homelab/sensor/temperatura"
+      value_template: "{{ value_json.temperatura }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "homelab/sensor/status"
+      payload_available: '{"estado":"online"}'
+      payload_not_available: '{"estado":"offline"}'
+      device:
+        identifiers: ["esp8266_sensor_01"]
+        name: "ESP8266 Sensor 01"
+        model: "NodeMCU ESP8266"
+        manufacturer: "Espressif"
+
+    - name: "RSSI Salón"
+      unique_id: "esp8266_sensor_01_rssi"
+      state_topic: "homelab/sensor/temperatura"
+      value_template: "{{ value_json.rssi }}"
+      unit_of_measurement: "dBm"
+      device_class: signal_strength
+      state_class: measurement
+      entity_category: diagnostic
+      availability_topic: "homelab/sensor/status"
+      payload_available: '{"estado":"online"}'
+      payload_not_available: '{"estado":"offline"}'
+      device:
+        identifiers: ["esp8266_sensor_01"]
+        name: "ESP8266 Sensor 01"
+        model: "NodeMCU ESP8266"
+        manufacturer: "Espressif"
