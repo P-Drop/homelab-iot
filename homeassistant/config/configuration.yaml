@@ -46,3 +46,13 @@ mqtt:
         name: "ESP8266 Sensor 01"
         model: "NodeMCU ESP8266"
         manufacturer: "Espressif"
+
+# -- Recorder -------------------------------
+
+recorder:
+  purge_keep_days: 30
+  commit_interval: 30
+  include:
+    entities:
+      - sensor.esp8266_sensor_01_temperatura_salon
+      - sensor.esp8266_sensor_01_rssi_salon
